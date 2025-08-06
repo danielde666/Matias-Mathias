@@ -1,10 +1,6 @@
 <?php get_header(); ?>
 <main>
   <section>
-    <h1><?php bloginfo('name'); ?></h1>
-    <p><?php bloginfo('description'); ?></p>
-  </section>
-  <section>
    <ul class="project-list">
   <?php
   $latest_posts = new WP_Query([
