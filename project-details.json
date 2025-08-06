@@ -1,0 +1,71 @@
+[
+    {
+      "key": "group_64d5e1f0c9b10",
+      "title": "Project Details",
+      "fields": [
+        {
+          "key": "field_64d5e1f80c1a1",
+          "label": "Project Title",
+          "name": "project_title",
+          "type": "text"
+        },
+        {
+          "key": "field_64d5e20c0c1a2",
+          "label": "Project Name",
+          "name": "project_name",
+          "type": "text"
+        },
+        {
+          "key": "field_64d5e2200c1a3",
+          "label": "Hero Image",
+          "name": "hero_image",
+          "type": "image",
+          "return_format": "array",
+          "preview_size": "medium",
+          "library": "all"
+        },
+        {
+          "key": "field_64d5e2320c1a4",
+          "label": "Video URL",
+          "name": "video_url",
+          "type": "url"
+        },
+        {
+          "key": "field_64d5e23f0c1a5",
+          "label": "Directed By",
+          "name": "directed_by",
+          "type": "text"
+        },
+        {
+          "key": "field_64d5e24e0c1a6",
+          "label": "Shot By",
+          "name": "shot_by",
+          "type": "text"
+        },
+        {
+          "key": "field_64d5e25b0c1a7",
+          "label": "Location",
+          "name": "location",
+          "type": "text"
+        }
+      ],
+      "location": [
+        [
+          {
+            "param": "post_type",
+            "operator": "==",
+            "value": "post"
+          }
+        ]
+      ],
+      "menu_order": 0,
+      "position": "normal",
+      "style": "default",
+      "label_placement": "top",
+      "instruction_placement": "label",
+      "hide_on_screen": "",
+      "active": true,
+      "description": ""
+    }
+  ]
+  
