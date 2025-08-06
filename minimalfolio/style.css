@@ -11,3 +11,20 @@ Text Domain: minimalfolio
 Tags: minimal, portfolio, starter
 */
 body { font-family: system-ui, sans-serif; background: #fff; margin: 0; color: #111; }
+
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.project-list-item {
+  margin-bottom: 2rem;
+}
+.project-hero-image img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
+.video-embed {
+  margin: 1rem 0;
+}
