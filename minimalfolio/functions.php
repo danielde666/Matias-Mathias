@@ -26,4 +26,10 @@ function cc_mime_types($mimes) {
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
+
+add_action('wp_enqueue_scripts', function() {
+    wp_enqueue_style('minimalfolio-style', get_stylesheet_uri());
+});
+
+
 ?>

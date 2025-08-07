@@ -1,26 +1,34 @@
 <?php get_header(); ?>
 <main>
   <section>
-   <ul class="project-list">
+   <div class="project-list">
   <?php
   $latest_posts = new WP_Query([
     'post_type' => 'post',
-    'posts_per_page' => 6, // or change to -1 for all
+    'posts_per_page' => -1, // or change to -1 for all
   ]);
   if ($latest_posts->have_posts()) :
     while ($latest_posts->have_posts()) : $latest_posts->the_post(); ?>
-      <li class="project-list-item">
-        <h3><a href="<?php the_permalink(); ?>"><?php the_field('project_title'); ?></a></h3>
+      <section class="project-list-item">
+		  <div class="project-img">
+			 <a href="<?php the_permalink(); ?>">
+				 <?php 
+			  $hero = get_field('hero_image');
+			  if ($hero) {
+				  echo '<div class="project-hero-image"><img src="' . esc_url($hero['url']) . '" alt="' . esc_attr($hero['alt']) . '"></div>';
+			  }
+			  ?>
+			  </a>
+		  </div>
+		  <div class="project-info">
+			  <a href="<?php the_permalink(); ?>">
+        <h3><?php the_field('project_title'); ?></h3>
         <p><strong>Project Name:</strong> <?php the_field('project_name'); ?></p>
         <p><strong>Directed By:</strong> <?php the_field('directed_by'); ?></p>
         <p><strong>Shot By:</strong> <?php the_field('shot_by'); ?></p>
         <p><strong>Location:</strong> <?php the_field('location'); ?></p>
-        <?php 
-          $hero = get_field('hero_image');
-          if ($hero) {
-            echo '<div class="project-hero-image"><img src="' . esc_url($hero['url']) . '" alt="' . esc_attr($hero['alt']) . '"></div>';
-          }
-        ?>
+				  </a>
+		  </div>
         <?php 
           $video_url = get_field('video_url');
           if ($video_url) {
@@ -34,13 +42,13 @@
             }
           }
         ?>
-      </li>
+      </section>
     <?php endwhile;
     wp_reset_postdata();
   else : ?>
     <li>No projects found.</li>
   <?php endif; ?>
-</ul>
+</div>
 
   </section>
 </main>
