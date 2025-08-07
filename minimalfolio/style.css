@@ -1,10 +1,10 @@
 /*
-Theme Name: Minimalfolio Zeta
+Theme Name: Minimalfolio
 Theme URI: https://github.com/danielde666/Matias-Mathias
 Author: Your Name
 Author URI: https://danielde.com
 Description: Minimal starter theme for portfolio sites.
-Version: 1.0
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: minimalfolio-zeta
@@ -28,6 +28,8 @@ body *{
   list-style: none;
   padding: 0;
   margin: 0;
+	margin-top:2rem;
+	
 }
 
 .project-list-item img {
@@ -65,4 +67,36 @@ body *{
 }
 .project-list-item p{
 	    margin-block-start: 0;
+}
+
+
+body.custom-cursor-active,
+body.custom-cursor-active a,
+body.custom-cursor-active button {
+  cursor: none !important;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  background-color: transparent;
+  border: 2px solid #111;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background 0.3s, border 0.3s;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  backdrop-filter: invert(1);
+  will-change: transform;
+}
+
+.custom-cursor.cursor-hover {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border-color: #fff;
 }
