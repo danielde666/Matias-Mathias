@@ -5,16 +5,8 @@
     <?php if (function_exists('get_field')): ?>
       <div>
         <h2><?php the_field('project_title'); ?></h2>
-        <p><strong>Project Name:</strong> <?php the_field('project_name'); ?></p>
-        <p><strong>Directed By:</strong> <?php the_field('directed_by'); ?></p>
-        <p><strong>Shot By:</strong> <?php the_field('shot_by'); ?></p>
-        <p><strong>Location:</strong> <?php the_field('location'); ?></p>
-        <?php 
-          $hero = get_field('hero_image');
-          if ($hero) {
-            echo '<img src="' . esc_url($hero['url']) . '" alt="' . esc_attr($hero['alt']) . '" style="max-width:100%;height:auto;">';
-          }
-        ?>
+   
+	
         <?php 
           $video_url = get_field('video_url');
           if ($video_url) {

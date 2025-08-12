@@ -9,11 +9,23 @@
   ]);
   if ($latest_posts->have_posts()) :
     while ($latest_posts->have_posts()) : $latest_posts->the_post(); ?>
+
+
+        <?php
+      
+        // Define the fields
+        $hero = get_field('hero_image');
+        $project_name = get_field('project_name');
+        $directed_by = get_field('directed_by');
+        $shot_by     = get_field('shot_by');
+        $location    = get_field('location');
+        ?>
+
+
       <section class="project-list-item">
 		  <div class="project-img">
 			 <a href="<?php the_permalink(); ?>">
 				 <?php 
-			  $hero = get_field('hero_image');
 			  if ($hero) {
 				  echo '<div class="project-hero-image"><img src="' . esc_url($hero['url']) . '" alt="' . esc_attr($hero['alt']) . '"></div>';
 			  }
@@ -23,10 +35,18 @@
 		  <div class="project-info">
 			  <a href="<?php the_permalink(); ?>">
         <h3><?php the_field('project_title'); ?></h3>
-        <p><strong>Project Name:</strong> <?php the_field('project_name'); ?></p>
-        <p><strong>Directed By:</strong> <?php the_field('directed_by'); ?></p>
-        <p><strong>Shot By:</strong> <?php the_field('shot_by'); ?></p>
-        <p><strong>Location:</strong> <?php the_field('location'); ?></p>
+        <?php if (!empty($project_name) && trim($project_name) !== ''): ?>
+              <p><strong>Project Name:</strong> <?php echo esc_html($project_name); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($directed_by) && trim($directed_by) !== ''): ?>
+        <p><strong>Directed By:</strong> <?php echo esc_html($directed_by); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($shot_by) && trim($shot_by) !== ''): ?>
+        <p><strong>Shot By:</strong> <?php echo esc_html($shot_by); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($location) && trim($location) !== ''): ?>
+        <p><strong>Location:</strong> <?php echo esc_html($location); ?></p>
+        <?php endif; ?>
 				  </a>
 		  </div>
         <?php 
