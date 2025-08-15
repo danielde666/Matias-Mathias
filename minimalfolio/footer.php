@@ -1,5 +1,15 @@
 <footer class="site-footer">
-    <!-- Footer content here -->
+     <?php
+        // Replace 'site-settings' with the actual slug or title of your page
+        $globals = get_page_by_path('site-settings'); // or by title
+        if ($globals) {
+            $site_settings_id = $globals->ID;
+            // Example usage:
+            echo get_field('contact', $site_settings_id); // 'contact' is your field name
+            echo get_field('social', $site_settings_id); // 'social' is your field name
+            echo get_field('info', $site_settings_id); // 'info' is your field name
+        }
+        ?>
   </footer>
   <?php wp_footer(); ?>
 

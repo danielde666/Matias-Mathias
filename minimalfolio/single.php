@@ -3,10 +3,7 @@
 <main>
   <article>
     <?php if (function_exists('get_field')): ?>
-      <div>
-        <h2><?php the_field('project_title'); ?></h2>
-   
-	
+      <div class="video">
         <?php 
           $video_url = get_field('video_url');
           if ($video_url) {
@@ -23,6 +20,7 @@
       </div>
     <?php endif; ?>
     <div>
+		<h2><?php the_field('project_title'); ?></h2>
       <?php the_content(); ?>
     </div>
   </article>
